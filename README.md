@@ -22,7 +22,7 @@
 
 [毛雯婧]() - 艺术家
 
-[林翰]() - Backend Dev
+[林翰](https://github.com/LinJohn8) - Backend Dev
 
 [Stark]() - Web3 Dev
 
