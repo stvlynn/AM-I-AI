@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SimpleWritePlugins",
+	"Description": "simple to write and load txt",
+	"Category": "Other",
+	"CreatedBy": "HWSLandDFTX8",
+	"CreatedByURL": "hanwenshilin-dftx8.blog.csdn.net",
+	"DocsURL": "https://zhuanlan.zhihu.com/p/690050744",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/eeb7e6311fc24504bf11cac7b41749c0",
+	"SupportURL": "",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "SimpleWritePlugins",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64",
+				"Android"
+			]
+		}
+	]
+}
