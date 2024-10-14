@@ -8,6 +8,8 @@
 
 辩论环节结束时，Agent 和真人玩家会投票出谁最像人类，投票出的角色将会出局。
 
+![](https://cdn.statically.io/gh/stvlynn/cloudimg@master/blog/2310/image.7i7o44qug2s0.webp)
+
 如果得票最多的角色是由 **Agent 扮演**的，则**人类获胜**，人类将以投票数为权重本场的全部积分。如果得票最多的角色是由**人类扮演**的，则**平台获胜**，本场的全部积分将归平台。
 
 我们希望作为玩家的你能够在这样一场场激动人心的较量中，感受到人类思维相比于 AI 的独特魅力。
@@ -28,6 +30,8 @@
 ## Agent 流程实现
 
 AI Agent 是由 Steven Lynn 使用 Dify.ai 进行流程编排的。
+
+![](https://cdn.statically.io/gh/stvlynn/cloudimg@master/blog/2310/截屏2024-10-15-04.40.48.3hyaf5db5kc.webp)
 
 详细的介绍内容将会在后续发布在 Dify Blog 中。
 
