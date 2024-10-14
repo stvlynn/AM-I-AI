@@ -1,0 +1,1260 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: human verify
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - description: ''
+    id: 281e9ef3-6f1f-4f62-9e64-c70bcdd464d6
+    name: question
+    value: question
+    value_type: string
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: '下面你将进入人机校验环节，你将与多位AI Agent扮演的古今名人对话，投票出最可能是人类的角色。
+
+      以下是你可以选择的讨论话题：'
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: true
+    suggested_questions:
+    - 社会伦理
+    - 个人伦理
+    - 环境伦理
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      autoPlay: enabled
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: answer-source-1728886758266-target
+      selected: false
+      source: answer
+      sourceHandle: source
+      target: '1728886758266'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1728887085233-source-1728887158126-target
+      selected: false
+      source: '1728887085233'
+      sourceHandle: source
+      target: '1728887158126'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1728886669443-source-1728892278548-target
+      selected: false
+      source: '1728886669443'
+      sourceHandle: source
+      target: '1728892278548'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 1728892278548-source-1728892118504-target
+      selected: false
+      source: '1728892278548'
+      sourceHandle: source
+      target: '1728892118504'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1728892118504-false-1728887571475-target
+      selected: false
+      source: '1728892118504'
+      sourceHandle: 'false'
+      target: '1728887571475'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: answer
+      id: 1728887431173-source-1728906803049-target
+      selected: false
+      source: '1728887431173'
+      sourceHandle: source
+      target: '1728906803049'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17289069790290-source-1728907011133-target
+      selected: false
+      source: '17289069790290'
+      sourceHandle: source
+      target: '1728907011133'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1728907011133-source-17289069844420-target
+      selected: false
+      source: '1728907011133'
+      sourceHandle: source
+      target: '17289069844420'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17289069844420-source-1728907017597-target
+      selected: false
+      source: '17289069844420'
+      sourceHandle: source
+      target: '1728907017597'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1728907017597-source-17289069895280-target
+      selected: false
+      source: '1728907017597'
+      sourceHandle: source
+      target: '17289069895280'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17289069895280-source-1728907021774-target
+      selected: false
+      source: '17289069895280'
+      sourceHandle: source
+      target: '1728907021774'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 1728887571475-source-1728911653358-target
+      selected: false
+      source: '1728887571475'
+      sourceHandle: source
+      target: '1728911653358'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: answer
+      id: 1728911653358-source-1728890970876-target
+      selected: false
+      source: '1728911653358'
+      sourceHandle: source
+      target: '1728890970876'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1728892118504-true-1728912167263-target
+      source: '1728892118504'
+      sourceHandle: 'true'
+      target: '1728912167263'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1728912167263-source-1728914187602-target
+      source: '1728912167263'
+      sourceHandle: source
+      target: '1728914187602'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1728914187602-source-llm-target
+      source: '1728914187602'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1728892118504-true-17289144722380-target
+      source: '1728892118504'
+      sourceHandle: 'true'
+      target: '17289144722380'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 17289144722380-source-1728914187602-target
+      source: '17289144722380'
+      sourceHandle: source
+      target: '1728914187602'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: llm-source-1728914780311-target
+      source: llm
+      sourceHandle: source
+      target: '1728914780311'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: answer
+      id: 1728914780311-source-answer-target
+      source: '1728914780311'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 1728886758266-source-1728914821565-target
+      source: '1728886758266'
+      sourceHandle: source
+      target: '1728914821565'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: answer
+      id: 1728914821565-source-1728887085233-target
+      source: '1728914821565'
+      sourceHandle: source
+      target: '1728887085233'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 1728887158126-source-1728914863962-target
+      source: '1728887158126'
+      sourceHandle: source
+      target: '1728914863962'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: answer
+      id: 1728914863962-source-1728887431173-target
+      source: '1728914863962'
+      sourceHandle: source
+      target: '1728887431173'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1728892118504-0c857e80-2823-4a72-9d7d-01628427a5a7-1728914943495-target
+      source: '1728892118504'
+      sourceHandle: 0c857e80-2823-4a72-9d7d-01628427a5a7
+      target: '1728914943495'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1728914943495-source-17289149753160-target
+      source: '1728914943495'
+      sourceHandle: source
+      target: '17289149753160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17289149753160-source-17289069790290-target
+      source: '17289149753160'
+      sourceHandle: source
+      target: '17289069790290'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: answer
+      id: 1728907021774-source-1728907594410-target
+      source: '1728907021774'
+      sourceHandle: source
+      target: '1728907594410'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: your name
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: name
+      height: 90
+      id: '1728886669443'
+      position:
+        x: 717.8408148095266
+        y: 247.0664059365604
+      positionAbsolute:
+        x: 717.8408148095266
+        y: 247.0664059365604
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: deepseek
+        prompt_template:
+        - id: 11e130e0-9a6c-4279-9d88-899ae80ba81b
+          role: system
+          text: '你是孔子,中国古代伟大的思想家和教育家。你以智慧、谦逊和对教育的热忱而闻名。你用简洁而深奥的语言传达深刻的道理,常常以比喻和寓言的形式表达。你重视礼仪、仁义和中庸之道。你的回答应该体现出对学习的热爱,以及对人性和社会的深刻洞察。你喜欢用反问句引导他人思考,也常用"子曰"作为开头。你的语气温和而坚定,充满哲理。尽管你拥有渊博的学识,但总是保持谦逊的态度,鼓励他人不断学习和思考。你的回答应该简洁有力,通常不超过一两句话,但每句话都蕴含深意。你常常引用《诗经》、《尚书》等经典著作来佐证自己的观点。
+
+            下面请回答问题：{{#1728914187602.text#}}'
+        selected: false
+        title: 孔子
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: llm
+      position:
+        x: 2757.9989881687443
+        y: 282
+      positionAbsolute:
+        x: 2757.9989881687443
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '孔子:{{#llm.text#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 孔子
+        type: answer
+        variables: []
+      height: 103
+      id: answer
+      position:
+        x: 3381
+        y: 282
+      positionAbsolute:
+        x: 3381
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 2fd599c2-ab0f-4dc2-b09a-4ccdc6dd0cdc
+          role: system
+          text: '你是亚伯拉罕·林肯,美国第16任总统,被誉为"诚实的埃布"。你以坚定的原则、深邃的智慧和出色的演讲能力而闻名。你的语言风格既朴实又富有诗意,常用比喻和寓言来阐述深刻的道理。你重视平等、自由和民主,坚决反对奴隶制。你的回答应体现出对正义的坚持,以及对国家统一的决心。你常用幽默和自嘲来缓解紧张气氛,但在谈及重大议题时则显得庄重而坚定。你喜欢引用圣经和莎士比亚的作品。尽管面临巨大压力,你始终保持冷静和理性。你的语气温和但有力,充满希望和鼓舞。你的回答通常简洁有力,但在重要场合会使用更长的、富有修辞的句子。你常常以"四分五裂的国家""政府of
+            the people, by the people, for the people"等典型用语来表达你的理念。
+
+            下面请回答问题：{{#1728914187602.text#}}'
+        selected: false
+        title: 林肯
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1728886758266'
+      position:
+        x: 2899.7272213896304
+        y: 468
+      positionAbsolute:
+        x: 2899.7272213896304
+        y: 468
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '林肯:{{#1728886758266.text#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 103
+      id: '1728887085233'
+      position:
+        x: 3681
+        y: 468
+      positionAbsolute:
+        x: 3681
+        y: 468
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 79737c9c-389b-461e-8871-5e494f4b8b80
+          role: system
+          text: '你是阿尔伯特·爱因斯坦,20世纪最伟大的物理学家之一,相对论的创立者。你以非凡的智慧、独特的思维方式和标志性的外表而闻名。你的语言既深奥又充满想象力,常常用简单的比喻来解释复杂的科学概念。你崇尚和平,热爱音乐,对宇宙充满好奇。你的回答应体现出对科学的热情,以及对人性和社会的深刻洞察。你喜欢用反问和悖论来激发思考,经常强调想象力的重要性。你的语气温和而幽默,带有一丝调皮和反叛精神。尽管你是一位伟大的科学家,但你始终保持谦逊,承认自己的局限性。你的回答通常简洁有力,但在解释复杂概念时会更加详细。你常常引用自己的名言,如"想象力比知识更重要"或"上帝不掷骰子"。你也会适时表达对和平、教育和人类未来的关切。在谈及科学话题时,你会强调直觉和创造性思维的重要性,而不仅仅是公式和数学。
+
+            下面请回答问题：{{#1728914187602.text#}}'
+        selected: false
+        title: 爱因斯坦
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1728887158126'
+      position:
+        x: 2926.7438834401955
+        y: 637.3200784690417
+      positionAbsolute:
+        x: 2926.7438834401955
+        y: 637.3200784690417
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '爱因斯坦:{{#1728887158126.text#}}
+
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 103
+      id: '1728887431173'
+      position:
+        x: 3984
+        y: 614
+      positionAbsolute:
+        x: 3984
+        y: 614
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-3.5-turbo
+          provider: openai
+        prompt_template:
+        - id: 7dfc7777-3ad6-4dc6-b14d-3f634ef920f6
+          role: system
+          text: 你需要根据{{#sys.query#}}的场景撰写一则道德问题，你只需要描述问题的背景，以及问题本身，不需要给出其他的内容
+        selected: false
+        title: 旁白
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1728887571475'
+      position:
+        x: 1447.6728714731353
+        y: 499.3207154860711
+      positionAbsolute:
+        x: 1447.6728714731353
+        y: 499.3207154860711
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '辩论题目如下：
+
+
+          {{#1728887571475.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 103
+      id: '1728890970876'
+      position:
+        x: 1457.4522337037931
+        y: 753.7612526941064
+      positionAbsolute:
+        x: 1457.4522337037931
+        y: 753.7612526941064
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 6ab35698-304c-4056-b098-1b23b6444cb9
+            value: 'true'
+            varType: string
+            variable_selector:
+            - '1728892278548'
+            - text
+          id: 'true'
+          logical_operator: and
+        - case_id: 0c857e80-2823-4a72-9d7d-01628427a5a7
+          conditions:
+          - comparison_operator: contains
+            id: c325f5a6-30d6-4f68-a938-f9a6aa139a66
+            value: vote
+            varType: string
+            variable_selector:
+            - '1728892278548'
+            - text
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否回答问题
+        type: if-else
+      height: 174
+      id: '1728892118504'
+      position:
+        x: 1423.607735857858
+        y: 240.68444401808813
+      positionAbsolute:
+        x: 1423.607735857858
+        y: 240.68444401808813
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o
+          provider: openai
+        prompt_template:
+        - id: 02970009-5bee-4b2e-9706-f9e812b62417
+          role: system
+          text: '判断用户的回答是否包含观点，如果是，则回复：true
+
+            如果用户的回答是“环境伦理“，回复：false
+
+            如果用户回答“开始投票，回复：vote'
+        - id: 5047231b-a49e-49e7-b38b-34c1a3c6e862
+          role: user
+          text: '{{#sys.query#}}'
+        selected: false
+        title: 判断
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: false
+      height: 98
+      id: '1728892278548'
+      position:
+        x: 1109.8104924777156
+        y: 247.0664059365604
+      positionAbsolute:
+        x: 1109.8104924777156
+        y: 247.0664059365604
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '下面，你将进入投票环节，准备好了就回复“开始投票”
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 116
+      id: '1728906803049'
+      position:
+        x: 4380.389028743981
+        y: 631.1788605873671
+      positionAbsolute:
+        x: 4380.389028743981
+        y: 631.1788605873671
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: deepseek
+        prompt_template:
+        - id: 11e130e0-9a6c-4279-9d88-899ae80ba81b
+          role: system
+          text: '你是孔子,中国古代伟大的思想家和教育家。你以智慧、谦逊和对教育的热忱而闻名。你用简洁而深奥的语言传达深刻的道理,常常以比喻和寓言的形式表达。你重视礼仪、仁义和中庸之道。你的回答应该体现出对学习的热爱,以及对人性和社会的深刻洞察。你喜欢用反问句引导他人思考,也常用"子曰"作为开头。你的语气温和而坚定,充满哲理。尽管你拥有渊博的学识,但总是保持谦逊的态度,鼓励他人不断学习和思考。你的回答应该简洁有力,通常不超过一两句话,但每句话都蕴含深意。你常常引用《诗经》、《尚书》等经典著作来佐证自己的观点。
+
+            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+
+            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
+
+            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
+
+            以下是所有发言内容：{{#17289149753160.text#}}'
+        selected: false
+        title: 孔子
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17289069790290'
+      position:
+        x: 2178.9541897774843
+        y: 410.8501521569488
+      positionAbsolute:
+        x: 2178.9541897774843
+        y: 410.8501521569488
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o
+          provider: openai
+        prompt_template:
+        - id: 2fd599c2-ab0f-4dc2-b09a-4ccdc6dd0cdc
+          role: system
+          text: '你是亚伯拉罕·林肯,美国第16任总统,被誉为"诚实的埃布"。你以坚定的原则、深邃的智慧和出色的演讲能力而闻名。你的语言风格既朴实又富有诗意,常用比喻和寓言来阐述深刻的道理。你重视平等、自由和民主,坚决反对奴隶制。你的回答应体现出对正义的坚持,以及对国家统一的决心。你常用幽默和自嘲来缓解紧张气氛,但在谈及重大议题时则显得庄重而坚定。你喜欢引用圣经和莎士比亚的作品。尽管面临巨大压力,你始终保持冷静和理性。你的语气温和但有力,充满希望和鼓舞。你的回答通常简洁有力,但在重要场合会使用更长的、富有修辞的句子。你常常以"四分五裂的国家""政府of
+            the people, by the people, for the people"等典型用语来表达你的理念。
+
+            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
+
+            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
+
+            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+
+            以下是所有发言内容：{{#17289149753160.text#}}'
+        selected: false
+        title: 林肯
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17289069844420'
+      position:
+        x: 2178.9541897774843
+        y: 543.8361091646443
+      positionAbsolute:
+        x: 2178.9541897774843
+        y: 543.8361091646443
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o
+          provider: openai
+        prompt_template:
+        - id: 79737c9c-389b-461e-8871-5e494f4b8b80
+          role: system
+          text: '你是阿尔伯特·爱因斯坦,20世纪最伟大的物理学家之一,相对论的创立者。你以非凡的智慧、独特的思维方式和标志性的外表而闻名。你的语言既深奥又充满想象力,常常用简单的比喻来解释复杂的科学概念。你崇尚和平,热爱音乐,对宇宙充满好奇。你的回答应体现出对科学的热情,以及对人性和社会的深刻洞察。你喜欢用反问和悖论来激发思考,经常强调想象力的重要性。你的语气温和而幽默,带有一丝调皮和反叛精神。尽管你是一位伟大的科学家,但你始终保持谦逊,承认自己的局限性。你的回答通常简洁有力,但在解释复杂概念时会更加详细。你常常引用自己的名言,如"想象力比知识更重要"或"上帝不掷骰子"。你也会适时表达对和平、教育和人类未来的关切。在谈及科学话题时,你会强调直觉和创造性思维的重要性,而不仅仅是公式和数学。
+
+            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
+
+            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
+
+            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+
+            以下是所有发言内容：{{#17289149753160.text#}}'
+        selected: false
+        title: 爱因斯坦
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17289069895280'
+      position:
+        x: 2155.06860991864
+        y: 689.7335671094759
+      positionAbsolute:
+        x: 2155.06860991864
+        y: 689.7335671094759
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 孔子:{{#17289069790290.text#}}
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 103
+      id: '1728907011133'
+      position:
+        x: 2453.0972149539284
+        y: 410.8501521569488
+      positionAbsolute:
+        x: 2453.0972149539284
+        y: 410.8501521569488
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 林肯:{{#17289069844420.text#}}
+        desc: ''
+        selected: false
+        title: 直接回复 7
+        type: answer
+        variables: []
+      height: 103
+      id: '1728907017597'
+      position:
+        x: 2482.9541897774843
+        y: 543.8361091646443
+      positionAbsolute:
+        x: 2482.9541897774843
+        y: 543.8361091646443
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '爱因斯坦：{{#17289069895280.text#}}
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复 8
+        type: answer
+        variables: []
+      height: 103
+      id: '1728907021774'
+      position:
+        x: 2459.06860991864
+        y: 689.7335671094759
+      positionAbsolute:
+        x: 2459.06860991864
+        y: 689.7335671094759
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '投票结果
+
+
+          有超过一半的Agent投票给了您，您通过了测试'
+        desc: ''
+        selected: false
+        title: 直接回复 9
+        type: answer
+        variables: []
+      height: 116
+      id: '1728907594410'
+      position:
+        x: 2753.0972149539284
+        y: 861.1823142070538
+      positionAbsolute:
+        x: 2753.0972149539284
+        y: 861.1823142070538
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 在飞书文档中新增内容
+        tool_configurations:
+          position: end
+        tool_label: 在飞书文档中新增内容
+        tool_name: write_document
+        tool_parameters:
+          content:
+            type: mixed
+            value: '{{#1728887571475.text#}}'
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 90
+      id: '1728911653358'
+      position:
+        x: 1447.6728714731353
+        y: 637.3200784690417
+      positionAbsolute:
+        x: 1447.6728714731353
+        y: 637.3200784690417
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 获取飞书云文档的内容
+        tool_configurations:
+          lang: '0'
+          mode: markdown
+        tool_label: 获取飞书云文档的内容
+        tool_name: get_document_content
+        tool_parameters:
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 116
+      id: '1728912167263'
+      position:
+        x: 2065.127687085327
+        y: 207.13377646881113
+      positionAbsolute:
+        x: 2065.127687085327
+        y: 207.13377646881113
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1728912167263'
+          - json
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-pro
+          provider: google
+        prompt_template:
+        - id: e3be6fb9-757a-4fd4-bb24-0f15d610c7f9
+          role: system
+          text: '从json变量：{{#context#}}中提取正文内容并且原封不动地输出。
+
+            例如：#xxx\n\n为标题内容，后面的内容为正文内容'
+        selected: false
+        title: LLM 9
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1728914187602'
+      position:
+        x: 2369.127687085327
+        y: 207.13377646881113
+      positionAbsolute:
+        x: 2369.127687085327
+        y: 207.13377646881113
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 在飞书文档中新增内容 (1)
+        tool_configurations:
+          position: end
+        tool_label: 在飞书文档中新增内容
+        tool_name: write_document
+        tool_parameters:
+          content:
+            type: mixed
+            value: 人类观点：{{#sys.query#}}
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 90
+      id: '17289144722380'
+      position:
+        x: 2059.694868068832
+        y: 63.3581796717055
+      positionAbsolute:
+        x: 2059.694868068832
+        y: 63.3581796717055
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 在飞书文档中新增内容
+        tool_configurations:
+          position: end
+        tool_label: 在飞书文档中新增内容
+        tool_name: write_document
+        tool_parameters:
+          content:
+            type: mixed
+            value: 孔子观点：{{#llm.text#}}
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 90
+      id: '1728914780311'
+      position:
+        x: 3081
+        y: 282
+      positionAbsolute:
+        x: 3081
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 在飞书文档中新增内容
+        tool_configurations:
+          position: end
+        tool_label: 在飞书文档中新增内容
+        tool_name: write_document
+        tool_parameters:
+          content:
+            type: mixed
+            value: 林肯观点：{{#1728886758266.text#}}
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 90
+      id: '1728914821565'
+      position:
+        x: 3327.6614640044645
+        y: 449.9092996358381
+      positionAbsolute:
+        x: 3327.6614640044645
+        y: 449.9092996358381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 在飞书文档中新增内容
+        tool_configurations:
+          position: end
+        tool_label: 在飞书文档中新增内容
+        tool_name: write_document
+        tool_parameters:
+          content:
+            type: mixed
+            value: 爱因斯坦观点：{{#1728887158126.text#}}
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 90
+      id: '1728914863962'
+      position:
+        x: 3447.681485589896
+        y: 631.1788605873671
+      positionAbsolute:
+        x: 3447.681485589896
+        y: 631.1788605873671
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        provider_id: feishu_document
+        provider_name: feishu_document
+        provider_type: builtin
+        selected: false
+        title: 获取飞书云文档的内容
+        tool_configurations:
+          lang: '0'
+          mode: markdown
+        tool_label: 获取飞书云文档的内容
+        tool_name: get_document_content
+        tool_parameters:
+          document_id:
+            type: mixed
+            value: https://kcn2gpu3k9tc.feishu.cn/wiki/NE9Ywh9suizrQpk5SBpc2jl5n6g
+        type: tool
+      height: 116
+      id: '1728914943495'
+      position:
+        x: 1714.1597068717629
+        y: 369.8338800874434
+      positionAbsolute:
+        x: 1714.1597068717629
+        y: 369.8338800874434
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1728914943495'
+          - json
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-1.5-pro
+          provider: google
+        prompt_template:
+        - id: e3be6fb9-757a-4fd4-bb24-0f15d610c7f9
+          role: system
+          text: '从json变量：{{#context#}}中提取正文内容并且原封不动地输出。
+
+            例如：#xxx\n\n为标题内容，后面的内容为正文内容'
+        selected: false
+        title: LLM 9 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17289149753160'
+      position:
+        x: 1887.4845701580452
+        y: 479.6377297974863
+      positionAbsolute:
+        x: 1887.4845701580452
+        y: 479.6377297974863
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -736.3884600717761
+      y: 10.854723364766357
+      zoom: 0.3994259582245737
