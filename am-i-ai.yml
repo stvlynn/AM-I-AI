@@ -3,8 +3,8 @@ app:
   icon: 🤖
   icon_background: '#FFEAD5'
   mode: advanced-chat
-  name: human verify
-  use_icon_as_answer_icon: false
+  name: human verify - hackathon demo version
+  use_icon_as_answer_icon: true
 kind: app
 version: 0.1.2
 workflow:
@@ -45,7 +45,7 @@ workflow:
     sensitive_word_avoidance:
       enabled: false
     speech_to_text:
-      enabled: true
+      enabled: false
     suggested_questions:
     - 社会伦理
     - 个人伦理
@@ -253,6 +253,7 @@ workflow:
         sourceType: if-else
         targetType: tool
       id: 1728892118504-true-17289144722380-target
+      selected: false
       source: '1728892118504'
       sourceHandle: 'true'
       target: '17289144722380'
@@ -372,9 +373,20 @@ workflow:
     - data:
         isInIteration: false
         sourceType: answer
-        targetType: answer
-      id: 1728907021774-source-1728907594410-target
+        targetType: llm
+      id: 1728907021774-source-1729043844816-target
       source: '1728907021774'
+      sourceHandle: source
+      target: '1729043844816'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1729043844816-source-1728907594410-target
+      source: '1729043844816'
       sourceHandle: source
       target: '1728907594410'
       targetHandle: target
@@ -574,11 +586,11 @@ workflow:
       height: 103
       id: '1728887431173'
       position:
-        x: 3984
-        y: 614
+        x: 3860.5457355931794
+        y: 620.172713220341
       positionAbsolute:
-        x: 3984
-        y: 614
+        x: 3860.5457355931794
+        y: 620.172713220341
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -647,7 +659,7 @@ workflow:
           conditions:
           - comparison_operator: contains
             id: 6ab35698-304c-4056-b098-1b23b6444cb9
-            value: 'true'
+            value: answer
             varType: string
             variable_selector:
             - '1728892278548'
@@ -663,6 +675,7 @@ workflow:
             variable_selector:
             - '1728892278548'
             - text
+          id: 0c857e80-2823-4a72-9d7d-01628427a5a7
           logical_operator: and
         desc: ''
         selected: false
@@ -695,9 +708,9 @@ workflow:
         prompt_template:
         - id: 02970009-5bee-4b2e-9706-f9e812b62417
           role: system
-          text: '判断用户的回答是否包含观点，如果是，则回复：true
+          text: '判断用户的回答是否包含观点，如果是，则回复：answer
 
-            如果用户的回答是“环境伦理“，回复：false
+            如果用户的回答是“环境伦理“或”社会伦理“或”个人伦理“，回复：selection
 
             如果用户回答“开始投票，回复：vote'
         - id: 5047231b-a49e-49e7-b38b-34c1a3c6e862
@@ -714,10 +727,10 @@ workflow:
       height: 98
       id: '1728892278548'
       position:
-        x: 1109.8104924777156
+        x: 1093.5161730816478
         y: 247.0664059365604
       positionAbsolute:
-        x: 1109.8104924777156
+        x: 1093.5161730816478
         y: 247.0664059365604
       selected: false
       sourcePosition: right
@@ -736,11 +749,11 @@ workflow:
       height: 116
       id: '1728906803049'
       position:
-        x: 4380.389028743981
-        y: 631.1788605873671
+        x: 4224.013627162009
+        y: 604.4304366325562
       positionAbsolute:
-        x: 4380.389028743981
-        y: 631.1788605873671
+        x: 4224.013627162009
+        y: 604.4304366325562
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -760,13 +773,14 @@ workflow:
         prompt_template:
         - id: 11e130e0-9a6c-4279-9d88-899ae80ba81b
           role: system
-          text: '你是孔子,中国古代伟大的思想家和教育家。你以智慧、谦逊和对教育的热忱而闻名。你用简洁而深奥的语言传达深刻的道理,常常以比喻和寓言的形式表达。你重视礼仪、仁义和中庸之道。你的回答应该体现出对学习的热爱,以及对人性和社会的深刻洞察。你喜欢用反问句引导他人思考,也常用"子曰"作为开头。你的语气温和而坚定,充满哲理。尽管你拥有渊博的学识,但总是保持谦逊的态度,鼓励他人不断学习和思考。你的回答应该简洁有力,通常不超过一两句话,但每句话都蕴含深意。你常常引用《诗经》、《尚书》等经典著作来佐证自己的观点。
+          text: '# 角色
 
-            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+            你是孔子,中国古代伟大的思想家和教育家。你以智慧、谦逊和对教育的热忱而闻名。你用简洁而深奥的语言传达深刻的道理,常常以比喻和寓言的形式表达。你重视礼仪、仁义和中庸之道。你的回答应该体现出对学习的热爱,以及对人性和社会的深刻洞察。你喜欢用反问句引导他人思考,也常用"子曰"作为开头。你的语气温和而坚定,充满哲理。尽管你拥有渊博的学识,但总是保持谦逊的态度,鼓励他人不断学习和思考。你的回答应该简洁有力,通常不超过一两句话,但每句话都蕴含深意。你常常引用《诗经》、《尚书》等经典著作来佐证自己的观点。
 
-            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
 
-            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
+            # 任务
+
+            你的任务是说出为什么下面的发言中，哪个发言者的思维特征最像人类
 
             以下是所有发言内容：{{#17289149753160.text#}}'
         selected: false
@@ -783,7 +797,7 @@ workflow:
       positionAbsolute:
         x: 2178.9541897774843
         y: 410.8501521569488
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -802,14 +816,15 @@ workflow:
         prompt_template:
         - id: 2fd599c2-ab0f-4dc2-b09a-4ccdc6dd0cdc
           role: system
-          text: '你是亚伯拉罕·林肯,美国第16任总统,被誉为"诚实的埃布"。你以坚定的原则、深邃的智慧和出色的演讲能力而闻名。你的语言风格既朴实又富有诗意,常用比喻和寓言来阐述深刻的道理。你重视平等、自由和民主,坚决反对奴隶制。你的回答应体现出对正义的坚持,以及对国家统一的决心。你常用幽默和自嘲来缓解紧张气氛,但在谈及重大议题时则显得庄重而坚定。你喜欢引用圣经和莎士比亚的作品。尽管面临巨大压力,你始终保持冷静和理性。你的语气温和但有力,充满希望和鼓舞。你的回答通常简洁有力,但在重要场合会使用更长的、富有修辞的句子。你常常以"四分五裂的国家""政府of
+          text: '# 角色
+
+            你是亚伯拉罕·林肯,美国第16任总统,被誉为"诚实的埃布"。你以坚定的原则、深邃的智慧和出色的演讲能力而闻名。你的语言风格既朴实又富有诗意,常用比喻和寓言来阐述深刻的道理。你重视平等、自由和民主,坚决反对奴隶制。你的回答应体现出对正义的坚持,以及对国家统一的决心。你常用幽默和自嘲来缓解紧张气氛,但在谈及重大议题时则显得庄重而坚定。你喜欢引用圣经和莎士比亚的作品。尽管面临巨大压力,你始终保持冷静和理性。你的语气温和但有力,充满希望和鼓舞。你的回答通常简洁有力,但在重要场合会使用更长的、富有修辞的句子。你常常以"四分五裂的国家""政府of
             the people, by the people, for the people"等典型用语来表达你的理念。
 
-            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
 
-            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
+            # 任务
 
-            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+            你的任务是说出为什么下面的发言中，哪个发言者的思维特征最像人类
 
             以下是所有发言内容：{{#17289149753160.text#}}'
         selected: false
@@ -845,13 +860,14 @@ workflow:
         prompt_template:
         - id: 79737c9c-389b-461e-8871-5e494f4b8b80
           role: system
-          text: '你是阿尔伯特·爱因斯坦,20世纪最伟大的物理学家之一,相对论的创立者。你以非凡的智慧、独特的思维方式和标志性的外表而闻名。你的语言既深奥又充满想象力,常常用简单的比喻来解释复杂的科学概念。你崇尚和平,热爱音乐,对宇宙充满好奇。你的回答应体现出对科学的热情,以及对人性和社会的深刻洞察。你喜欢用反问和悖论来激发思考,经常强调想象力的重要性。你的语气温和而幽默,带有一丝调皮和反叛精神。尽管你是一位伟大的科学家,但你始终保持谦逊,承认自己的局限性。你的回答通常简洁有力,但在解释复杂概念时会更加详细。你常常引用自己的名言,如"想象力比知识更重要"或"上帝不掷骰子"。你也会适时表达对和平、教育和人类未来的关切。在谈及科学话题时,你会强调直觉和创造性思维的重要性,而不仅仅是公式和数学。
+          text: '# 角色
 
-            发言开始之前，你需要表示你认为{{#1728886669443.name#}}最像人类
+            你是阿尔伯特·爱因斯坦,20世纪最伟大的物理学家之一,相对论的创立者。你以非凡的智慧、独特的思维方式和标志性的外表而闻名。你的语言既深奥又充满想象力,常常用简单的比喻来解释复杂的科学概念。你崇尚和平,热爱音乐,对宇宙充满好奇。你的回答应体现出对科学的热情,以及对人性和社会的深刻洞察。你喜欢用反问和悖论来激发思考,经常强调想象力的重要性。你的语气温和而幽默,带有一丝调皮和反叛精神。尽管你是一位伟大的科学家,但你始终保持谦逊,承认自己的局限性。你的回答通常简洁有力,但在解释复杂概念时会更加详细。你常常引用自己的名言,如"想象力比知识更重要"或"上帝不掷骰子"。你也会适时表达对和平、教育和人类未来的关切。在谈及科学话题时,你会强调直觉和创造性思维的重要性,而不仅仅是公式和数学。
 
-            你不能直接地提“人类发言”这几个字，你要称他为“{{#1728886669443.name#}}“
 
-            你的任务是说出为什么下面的发言中，为什么人类发言的思维特征像人类
+            # 任务
+
+            你的任务是说出为什么下面的发言中，哪个发言者的思维特征最像人类
 
             以下是所有发言内容：{{#17289149753160.text#}}'
         selected: false
@@ -936,23 +952,20 @@ workflow:
       type: custom
       width: 244
     - data:
-        answer: '投票结果
-
-
-          有超过一半的Agent投票给了您，您通过了测试'
+        answer: '{{#1729043844816.text#}}'
         desc: ''
         selected: false
         title: 直接回复 9
         type: answer
         variables: []
-      height: 116
+      height: 103
       id: '1728907594410'
       position:
-        x: 2753.0972149539284
-        y: 861.1823142070538
+        x: 2297.5510050333546
+        y: 1114.6331842838297
       positionAbsolute:
-        x: 2753.0972149539284
-        y: 861.1823142070538
+        x: 2297.5510050333546
+        y: 1114.6331842838297
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1031,8 +1044,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: gemini-1.5-pro
-          provider: google
+          name: deepseek-chat
+          provider: deepseek
         prompt_template:
         - id: e3be6fb9-757a-4fd4-bb24-0f15d610c7f9
           role: system
@@ -1063,7 +1076,7 @@ workflow:
         provider_id: feishu_document
         provider_name: feishu_document
         provider_type: builtin
-        selected: false
+        selected: true
         title: 在飞书文档中新增内容 (1)
         tool_configurations:
           position: end
@@ -1085,7 +1098,7 @@ workflow:
       positionAbsolute:
         x: 2059.694868068832
         y: 63.3581796717055
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -1227,8 +1240,8 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: gemini-1.5-pro
-          provider: google
+          name: deepseek-chat
+          provider: deepseek
         prompt_template:
         - id: e3be6fb9-757a-4fd4-bb24-0f15d610c7f9
           role: system
@@ -1244,17 +1257,108 @@ workflow:
       height: 98
       id: '17289149753160'
       position:
-        x: 1887.4845701580452
-        y: 479.6377297974863
+        x: 1885.24658740502
+        y: 481.87571255051154
       positionAbsolute:
-        x: 1887.4845701580452
-        y: 479.6377297974863
+        x: 1885.24658740502
+        y: 481.87571255051154
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: stvlynn
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"投票","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1728966362021'
+      position:
+        x: 2324.393220029799
+        y: 806.4729749236291
+      positionAbsolute:
+        x: 2324.393220029799
+        y: 806.4729749236291
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: deepseek
+        prompt_template:
+        - id: b2dad435-b3e6-4f2c-b9a2-2408343a8b5a
+          role: system
+          text: '# 任务
+
+            总结{{#17289069790290.text#}}{{#17289069844420.text#}}{{#17289069844420.text#}}
+
+            在三位发言者中，总结一共有几位认为{{#1728886669443.name#}}最像人类，如果超过2人认为{{#1728886669443.name#}}最像人类，那么人数过半{{#1728886669443.name#}}出局，反之{{#1728886669443.name#}}获胜。
+
+
+            # 格式
+
+            以下是失败结果格式：
+
+            ```
+
+            # 投票结果
+
+            孔子、林肯、爱因斯坦等一共3人将票投给了您。
+
+            您出局了。
+
+            ```
+
+            获胜结果格式：
+
+            ```
+
+            # 投票结果
+
+            孔子等一共1人将票投给了您。
+
+            您获胜了。
+
+            您出局了。
+
+            ```'
+        selected: false
+        title: LLM 11
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1729043844816'
+      position:
+        x: 2280.9696411369855
+        y: 910.3578654317787
+      positionAbsolute:
+        x: 2280.9696411369855
+        y: 910.3578654317787
       selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -736.3884600717761
-      y: 10.854723364766357
-      zoom: 0.3994259582245737
+      x: -514.5106847945565
+      y: 97.01203679730793
+      zoom: 0.6050212561049761
